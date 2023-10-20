@@ -1,0 +1,10 @@
+I have become familiar with different programming concepts :
+such as data types, variables, operators, arrays, conditinals and for loops.
+
+
+I learned that learning comes through struggle that induces a healthy challenge to the brain
+without provoking too much stress that blocks learning.
+
+
+One valuable mistake i made this week is not uploading the assingnments correctly to gethub.
+Now I manage to update my repository without problem.
