@@ -1,12 +1,4 @@
-// <10 latte
-// 10< x < 16  hot chocolate
-// 15  hot chocolate / tea / cake
-// 16 ice cream / coockies / candy    if wednsday : strawberry else vanilla
-// 17 hot chocolate / tea / cake
-// 18 ice cream / coockies / candy      if wednsday : strawberry else vanilla
 
-//  18 < x < 22 ice cream               if wednsday : strawberry else vanilla
-// > 22 bed  
 console.log(homeworkReward("Wednesday",22))
 
 function homeworkReward (day, time) {
@@ -47,8 +39,3 @@ function homeworkReward (day, time) {
     }
     return reward
 }
-
-// var testArr =["Strawberry ice cream","Cookies","Candy"];
-// var testrnd  =Math.floor (Math.random()*2);
-// console.log (testArr[tes])
-
