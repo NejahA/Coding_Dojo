@@ -1,0 +1,22 @@
+#container {
+    background:darkgreen;
+    height: 600px;
+    width: 900px;
+}
+#triangle { 
+   position: relative;
+    display: inline-block ;
+    width: 0;
+    height: 0;
+    border-style:solid ;
+    border-width: 300px 1000px 300px 200px;
+    border-color: transparent transparent transparent red;
+}
+#black {
+    display: inline-block;
+    
+    height: 200px ;
+    width: 900px;
+    background: black;
+
+}
