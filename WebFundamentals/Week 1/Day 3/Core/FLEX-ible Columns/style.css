@@ -1,11 +1,13 @@
 *{
     padding-left: 30px;
+    
 }
 .row{
     display: flex;
     justify-content: space-evenly;
     text-align: left;
     line-height: 3;
+    
     color: white;
     /* padding-left: 30px; */
     

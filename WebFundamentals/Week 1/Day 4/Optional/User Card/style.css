@@ -1,0 +1,45 @@
+*{
+    margin :0 auto;
+    padding: 0;
+}
+
+.container{
+    border: 5px solid grey;
+    width: 800px;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+}
+.aqua{
+    width:800px;
+    height: 100px;
+    background-color: aqua;
+    flex:2;
+}
+.white{
+    width:800px;
+    height: 100px;
+    background-color: white;
+    flex:5
+}
+
+.user{
+    height: 150px;
+    position:relative;
+    top:50px;
+    left: 50px;
+}
+
+.text{
+    position: relative;
+    top: 80px;
+    left: 100px;
+    font-size: larger;
+}
+.marker {
+    height: 20px;
+}
+
+.gear{
+    height: 20px;
+}
