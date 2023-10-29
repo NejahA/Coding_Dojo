@@ -15,11 +15,13 @@ var likesTwo=0;
 function addLikeOne(element) {
     likesOne++
     element.innerText= likesOne+" likes";
+    alert('Ninja was liked!');
     return likesOne;
 }
 
 function addLikeTwo(element) {
     likesTwo++
     element.innerText= likesTwo+" likes";
+    alert('Ninja was liked!');
     return likesTwo;
 }
