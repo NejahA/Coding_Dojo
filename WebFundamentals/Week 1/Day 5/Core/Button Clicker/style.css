@@ -1,0 +1,120 @@
+#container {
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+button{
+    box-shadow: black 2px 2px;
+    border: 1px solid black;
+}
+nav {
+    height: 50px;
+    width: 100%;
+    background-color: #C1C1C1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#login, #search {
+    height: 30px;
+}
+
+#content {
+    margin-top: 30px;
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#leftSide {
+    display: flex;
+    justify-content: flex-start;
+    flex: 3;
+    flex-direction: column;
+    height: 100%;
+    /* background-color: green; */
+    align-items:flex-start;
+}
+#ninjaOne {
+    border: 2px solid black;
+    /* background-color: grey; */
+    height: 40%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+#ninjaTwo {
+    border: 2px solid black;
+    margin-top: 5%;
+    /* background-color: blue; */
+    height: 40%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+.def{
+    margin: auto;
+    flex: 1;
+}
+.ninja{
+   
+    /* background-color: red; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+#likes {
+    margin-top: -20%;
+}
+
+
+#rightSside{
+    align-items:flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    flex: 1;
+    height: 100%;
+    /* background-color: yellow; */
+}
+
+#definition{
+    border: 2px solid black;
+    padding: 1%;
+    height: 30%;
+    width: 90%;
+    /* background-color: red; */
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 5%;
+    align-items: center;
+}
+
+#remove {
+    background-color: #93C47D;
+    width: 80%;
+}
+#likesOne, #likesTwo {
+    width: 80%;
+    margin-top: -20%;
+    background-color: #FFD966;
+}
+#login{
+    color: white;
+    background-color:#2B78E4 ;
+    width: 15%;
+}
