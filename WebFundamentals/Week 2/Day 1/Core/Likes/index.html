@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav><h1>Network</h1></nav>
+    <h1 id="title">Your Feed</h1>
+    <div id="content">
+        <div id="leftSide">
+            <img src="./user-circle.png" alt="" id="avatar">
+            <a href="#">Add an avatar</a>
+            <h2>James Doe</h2>
+        </div>
+        <div id="rightSide">
+            <div class="box">
+                <div id="top">
+                    <h2 class="name">Neil M</h2>
+                    <h3 id="likesOne">0 like(s)</h3>
+                    <button id="btnOne" onclick="addOne()"> Like</button>
+                </div>
+                <div class="description">
+                    
+                        I just set up the new discord bot, let me know
+                        what you all think. <a href="#">link</a>
+                </div>
+            </div>
+            <div class="box" id="inner">
+                <div id="top">
+                    <h2 class="name">Nichole K</h2>
+                    <h3 id="likesTwo">0 like(s)</h3>
+                    <button id="btnTwo" onclick="addTwo()" > Like</button>
+                </div>
+                <div class="description">
+                    
+                        Just finished my <a href="#">next comic</a>, check it out.
+                </div>
+            </div>
+            <div class="box" id="inner">
+                <div id="top">
+                    <h2 class="name">Jim R</h2>
+                    <h3 id="likesThree">0 like(s)</h3>
+                    <button id="btnThree" onclick="addThree()"> Like</button>
+                </div>
+                <div class="description">
+                    
+                        I can't stop listening to the <a href="#">new album</a>.Who else is liking it?
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
