@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <nav>
+        <ul class="options">
+            <li class="profile">Profile</li>
+            <li>Home</li>
+            <li class="myProfile">My Profile</li>
+            <li>Find Connections</li>
+        </ul>
+        <button class="btn">Sign Out</button>
+    </nav>
+    <div class="container">
+        <div class="leftSide">
+                <div id="card">
+                    <div class="topBanner">
+                    <img id="jane" src="./assets/images/jane-m.jpg" alt="">
+                    </div>
+                    <div class="bottomBanner">
+                    <ul class="info">
+                        <li><h1 id ="name">Jane Doe</h1></li><br>
+                        <li><h3><img id="marker" src="./assets/icons/map-marker.png" alt=""> Seattle</h3></li><br>
+                        <li>Developer |Engineer |Problem Solver</li>
+                        <li>Master of shadows and the Internet!</li><br>
+                        <li>&nbsp<img id="gear" src="./assets/icons/gear.png" alt="" ><a href="#" onclick="changeName()"> edit profile</a></li>
+                    </ul>
+                    </div>
+                </div>
+            <div id="edu">
+                <div class="topBanner">Education</div>
+                <div class="bottomBanner">
+                    <ul id="eduInfo">
+                        <li> <h2>Coding Dojo - Full Stack BootCamp</h2></li>
+                        <li id="date">Dec 2019- Mar 2020</li>
+                        <li id="belts">Triple black belt in Python, MERN, and C#</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div id="requests">
+                <div  class="topBanner">
+                    <h1><span id="cnxRequests">2</span>Connection Requests</h1>
+                </div>
+                <div class="bottomBanner">
+                    <ul>
+                        <li id="contactOne"><img class="picture" src="./assets/images/todd-s.jpg" alt=""><h3>Todd E</h3> <span id="validation"><img onclick="acceptOne()" class="icon" src="./assets/icons/accept-circle.png" alt=""><img onclick="refuseOne()" id="refuse1" class="icon" src="./assets/icons/close-circle.png" alt=""></span></li>
+                        <li id="contactTwo"><img class="picture" src="./assets/images/phil-s.jpg" alt=""><h3>Phil K</h3> <span id="validation"><img onclick="acceptTwo()" class="icon" src="./assets/icons/accept-circle.png" alt=""><img onclick="refuseTwo()" id="refuse2" class="icon" src="./assets/icons/close-circle.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="connections">
+                <div class="topBanner">
+                    <h1><span id="cnxs">418</span>Your Connections</h1>
+                </div>
+                <div class="bottomBanner">
+                    <ul>
+                        <li><img class="picture" src="./assets/images/adrien-s.jpg" alt=""><h3>Adrien D</h3></li>
+                        <li><img class="picture" src="./assets/images/anne-s.jpg" alt=""><h3>Anne J</h3></li>
+                        <li><img class="picture" src="./assets/images/alayne-s.jpg" alt=""><h3>Alayne T</h3></li>
+                        <li><img class="picture" src="./assets/images/arry-s.jpg" alt=""><h3>Arry Y</h3></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
