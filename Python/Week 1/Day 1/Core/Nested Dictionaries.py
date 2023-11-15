@@ -33,7 +33,7 @@ def iterateDictionary(some_list):
         for key in some_list[i]:
             keyStr= f"{key} - {some_list[i][key]}"
             fullStr=fullStr+ keyStr+", "
-        print(fullStr)
+        print(fullStr[:-2])
 
 
 iterateDictionary(students) 
