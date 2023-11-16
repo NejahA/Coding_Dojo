@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <section class="container">
+
+        {% for i in range(rows|int) %}
+        <section style="margin: 0 auto;">
+            {% set cols=cols|int %}
+            {% set cols= cols/ 2%}
+            
+            {% for j in range(cols|int) %}
+            
+            {% if i%2 == 0 %}
+            <div class="black" style="background-color: {{color1}};"></div>
+            <div class="red"  style="background-color: {{color2}};"></div>
+            {% endif %}
+            {% if i%2 == 1 %}
+            <div class="red"  style="background-color: {{color2}};"></div>
+            <div class="black"  style="background-color: {{color1}};"></div>
+            {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+        
+        {% endfor %}
+    </section>
+</body>
+</html>
