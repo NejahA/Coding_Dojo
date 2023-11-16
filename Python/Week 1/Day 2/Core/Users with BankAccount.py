@@ -28,24 +28,6 @@ class BankAccount:
         for i in range (0, len(cls.all_accounts)):
             print (f"account {i+1}'s balance : {cls.all_accounts[i].balance} ")
 
-acc1 = BankAccount (0.02,1000)
-acc2= BankAccount (0.05, 800)
-
-acc1.deposit(100)
-acc1.deposit(150)
-acc1.deposit(50)
-acc1.withdraw(200)
-acc1.yield_interest()
-acc1.display_account_info()
-
-acc2.withdraw(100)
-acc2.withdraw(50)
-acc2.withdraw(70)
-acc2.withdraw(50)
-acc2.yield_interest()
-acc2.display_account_info()
-
-BankAccount.all_infos()
 
 class User:
     def __init__(self, name, email):
@@ -53,8 +35,6 @@ class User:
         self.name = name
         self.email = email
 
-    
-    # other methods
     def make_account(self):
         self.accounts.append(BankAccount(0.02))
         
@@ -74,13 +54,15 @@ class User:
 
 achref = User ("achref", "mail")
 achref.make_account()
+achref.make_account()
 achref.make_deposit(10000,0)
+achref.make_deposit(5000,1)
 achref.display_user_balance(0)
+achref.display_user_balance(1)
 
 
 nejah = User ("nejah","mail")
 nejah.make_account()
-
 achref.transfer_money(0,400,nejah,0)
 achref.display_user_balance(0)
 nejah.display_user_balance(0)
