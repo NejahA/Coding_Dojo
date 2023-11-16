@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <table class="table table-striped">
+        <tr>
+            <th scope="row">
+                First Name
+            </th>
+            <th scope="row">
+                Last Name
+            </th>
+            <th scope="row">
+                Full Name
+            </th>
+
+        </tr>
+        {% for idx in range(dict|length): %}
+        <tr>
+            {% for el in dict[idx] :%}
+            <td>
+                {{dict[idx][el]}}
+            </td>
+            {% endfor %}
+            <td>
+                {% for el in dict[idx] :%}
+                {{dict[idx][el]}}
+                {% endfor %}
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
