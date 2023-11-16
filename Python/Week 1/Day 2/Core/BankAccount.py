@@ -1,5 +1,4 @@
 class BankAccount:
-    # don't forget to add some default values for these parameters!
     all_accounts=[]
 
     def __init__(self, int_rate, balance=0): 
@@ -47,3 +46,46 @@ acc2.yield_interest()
 acc2.display_account_info()
 
 BankAccount.all_infos()
+
+class User:
+    def __init__(self, name, email):
+        self.accounts=[]
+        self.name = name
+        self.email = email
+
+    
+    # other methods
+    def make_account(self):
+        self.accounts.append(BankAccount(0.02))
+        
+
+    def make_deposit(self, amount, acc_index):
+        self.accounts[acc_index].deposit(amount)
+    
+    def make_withdrawal(self, amount):
+        self.accounts[acc_index].withdraw(amount)
+    
+    def display_user_balance(self,acc_index):
+        self.accounts[acc_index].display_account_info()
+    
+    def transfer_money(self,acc_index, amount, other_user,other_index):
+        self.accounts[acc_index].withdraw(amount)
+        other_user.accounts[other_index].deposit(amount)
+
+achref = User ("achref", "mail")
+achref.make_account()
+achref.make_deposit(10000,0)
+achref.display_user_balance(0)
+
+
+nejah = User ("nejah","mail")
+nejah.make_account()
+
+achref.transfer_money(0,400,nejah,0)
+achref.display_user_balance(0)
+nejah.display_user_balance(0)
+
+
+
+
+
