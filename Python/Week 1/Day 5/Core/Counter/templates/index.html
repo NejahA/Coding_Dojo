@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <h2>Site Visits :</h2>
+        <h2>
+            {{session["visits"]}}
+        </h2>
+        <form action="/addcounter" method="post">
+            <label for="increments">
+                <h3>
+                    Input Counter Increments
+                </h3>
+                <input type="number" name="increments" id="add">
+            </label>
+            <button class="btn border-1 border-black">Add to Counter</button>
+        </form>
+        <h2>
+            {{session["counter"]}}
+        </h2>
+        <form action="/reset" method="post">
+            <button class="btn border-1 border-black">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
