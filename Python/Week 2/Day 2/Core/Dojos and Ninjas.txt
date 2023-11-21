@@ -1,0 +1,16 @@
+select * from dojos;
+select * from ninjas;
+insert into dojos (name) values ('dojo1'),('dojo2'),('dojo3');
+delete from dojos where id >=1;
+insert into dojos (name) values ('newdojo1'),('newdojo2'),('newdojo3');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) values ('Achref','Blue',27,4),('Joe','Blue',25,4),('Jane','Blue',24,4);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) values ('Achref','Red',27,5),('Joe','Red',25,5),('Jane','Red',24,5);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) values ('Achref','Green',27,6),('Joe','Green',25,6),('Jane','Green',24,6);
+select * from ninjas where dojo_id=4;
+select * from ninjas where dojo_id=6;
+select name from dojos where id = (select  dojo_id from ninjas where id=9);
+
+select * from ninjas
+join dojos on dojos.id= ninjas.dojo_id where ninjas.id=6;
+
+select * from ninjas join dojos
