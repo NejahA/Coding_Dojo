@@ -2,11 +2,15 @@ from flask import Flask,render_template,session,request,redirect
 
 app= Flask(__name__)
 app.secret_key="secret key"
+
+
+visits=0
 @app.route("/")
 def display():
-
-    session["visits"] +=1
-    return render_template("index.html")
+        
+        session["visits"] = session["visits"]+1
+        
+        return render_template("index.html")
 
 @app.route("/addcounter", methods=["POST"])
 def add():
