@@ -5,17 +5,19 @@ app= Flask(__name__)
 app.secret_key="Secret Key"
 
 
+counter=0
 
 @app.route("/")
 def display():
     return render_template("index.html")
 
-counter=0
+
+
 @app.route("/guess", methods=['POST'])
 def attempt():
     if session['counter']==5:
-        session['correctnum']=session['rnd']
         session['rnd']=random.randint(1,10)
+        session['correctnum']=session['rnd']
         session['counter']=1
     
     elif int(request.form["myguess"])>session['rnd']:
