@@ -19,27 +19,20 @@
             <th>Player attempts</th>
         </thead>
         <tbody>
-            {% for dict in session['winners'] %}
+            
+
             <tr>
-                {% for k in dict %}
                 <td>
-                    {{k}}
-                </td>
-                <td>
-                    {{ dict[k] }}
+                    
                 </td>
             </tr>
-
-                {% endfor %}
-        
-        
-            {% endfor %}
-
+            
+            
         </tbody>
-
-
+        
+        
     </table>
-    
+    {{session['winners'][0]}}
 
 </body>
 </html>

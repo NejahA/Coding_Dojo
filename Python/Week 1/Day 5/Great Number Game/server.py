@@ -1,4 +1,5 @@
 from flask import Flask,session,request,redirect,render_template
+from typing import List
 import random
 
 app= Flask(__name__)
@@ -35,15 +36,34 @@ def attempt():
 
     return redirect("/")
 
-winners=[]
 @app.route('/name',methods=["POST"])
 def score():
-    session['player']=request.form['name']
-    session['winners'].append({request.form['name'] : session['correctcounter'] })
-    return redirect('/leaderboard')
+        
+        session['player']=request.form['name']
+
+        # if type(session['winners']) == list:
+        #     print('*****************correct type*************')
+        #     winner.append(request.form['name'])
+        # else:
+            # print('***************wrong type**************')
+            # session['winners'].append('TEST')
+        # else:
+        
+        
+        # print("===========================>", session['winners'])
+
+    # if session["winners"] == undefined:
+    #     session['winners']=[]
+    # else:
+    #     session['player']=request.form['name']
+    #     session['winners'].append({request.form['name'] : session['correctcounter'] })
+    # print(session["winners"])
+        return redirect('/leaderboard')
 
 @app.route('/leaderboard')
 def winners():
+    session['winners'].append(session['player'])
+    print("WINNERS =================>" ,session['winners'])
     return render_template('scores.html')
 
 if __name__ == "__main__":
