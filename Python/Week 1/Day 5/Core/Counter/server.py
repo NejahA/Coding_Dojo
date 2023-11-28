@@ -4,7 +4,7 @@ app= Flask(__name__)
 app.secret_key="secret key"
 
 
-visits=0
+
 @app.route("/")
 def display():
         

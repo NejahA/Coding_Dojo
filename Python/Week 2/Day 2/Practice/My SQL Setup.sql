@@ -1,5 +1,12 @@
-select * from names;
-insert into names (name) values ('Achref');
-insert into names (name) values ('Najla'),('Melek');
-delete from names where id=1;
-update names set name="Nejah" where id = 2; 
+select * from cities;
+select * from countries;
+select * from languages;
+
+select * from countries,languages where (countries.code = languages.country_code) and (languages.language="Slovene");
+
+
+SELECT countries.name , COUNT(cities.name) as cities
+FROM countries
+LEFT JOIN cities ON countries.id = cities.country_id
+GROUP BY countries.name
+ORDER BY cities DESC;

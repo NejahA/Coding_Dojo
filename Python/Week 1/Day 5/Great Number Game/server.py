@@ -6,6 +6,7 @@ app= Flask(__name__)
 app.secret_key="Secret Key"
 
 
+winners=[]
 counter=0
 
 @app.route("/")
@@ -40,7 +41,7 @@ def attempt():
 def score():
         
         session['player']=request.form['name']
-
+        
         # if type(session['winners']) == list:
         #     print('*****************correct type*************')
         #     winner.append(request.form['name'])
@@ -59,10 +60,9 @@ def score():
     #     session['winners'].append({request.form['name'] : session['correctcounter'] })
     # print(session["winners"])
         return redirect('/leaderboard')
-
 @app.route('/leaderboard')
 def winners():
-    session['winners'].append(session['player'])
+    session['winners'].append("session['player']")
     print("WINNERS =================>" ,session['winners'])
     return render_template('scores.html')
 
