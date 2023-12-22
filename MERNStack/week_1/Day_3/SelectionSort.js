@@ -29,5 +29,7 @@ function selectionSort(arr){
     }
     return arr
 }
+
+
 console.log(selectionSort(myArr));
 console.log(selectionSort(arrTest));
