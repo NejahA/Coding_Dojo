@@ -1,0 +1,9 @@
+.container {
+    text-align: center;
+    margin: 5% 10%;
+    
+}
+.box {
+    display: inline-block;
+    margin: 5%;
+}
