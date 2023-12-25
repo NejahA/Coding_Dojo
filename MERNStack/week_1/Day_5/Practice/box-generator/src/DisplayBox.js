@@ -6,7 +6,7 @@ const DisplayBox = (props) => {
   return (
     <div className='container'>
         
-    {allColors.map( (color) =>  <div className='box' style={{width: "200px", height:"200px", backgroundColor: color }}></div> )}
+    {allColors.map( (color) =>  <div className='box' style={{width: color.width+"px", height:color.height+"px", backgroundColor: color.color }}></div> )}
     </div>
   )
 }
