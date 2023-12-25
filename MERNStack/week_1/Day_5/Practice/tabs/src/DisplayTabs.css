@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400&family=Montserrat:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+.tabs{
+    position: relative;
+    width: 100%;
+}
+.tabs .title{
+    padding: 50px 20px 100px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: purple;
+}
+.tabs .tab-header,
+.tabs .tab-indicator,
+.tabs .tab-body{
+    margin: 0 auto;
+    max-width: 650px;
+    width: 100%
+}
+.tabs .tab-header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin-top: -60px;
+    z-index: 2;
+}
+.tabs .tab-header > div{
+    color:yellow;
+    width: 25%;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 300ms ease-in-out;
+}
+.tabs .tab-header > div.active{
+    color: blueviolet;
+}
+.tabs .tab-indicator{
+    position: relative;
+    height: 60px;
+    margin-top: -60px;
+}
+.tabs .tab-indicator > div{
+    position: absolute;
+    left: 0%;
+    width: 25%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px 10px 0px 0px;
+    transition:  all 300ms ease-in-out;
+}
+.tabs .tab-body{
+    position: relative;
+}
+.tabs .tab-body > div{
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    opacity: 0;
+    top: -100vh
+}
+.tabs .tab-body > div > * {
+    margin:10px 0px;
+}
+
+.tabs .tab-body > div > p {
+    color:#555;
+    font-size: 15px;
+}
+
+.tabs .tab-body > div.active{
+    top:0px;
+    opacity: 1;
+    transition: top 0ms ease-in-out 0ms,
+                opacity 500ms ease-in-out 0ms;
+}
