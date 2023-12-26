@@ -4,8 +4,12 @@ arr3= [1,3,4,5,8,10]
 arr4= [1,3,4,5]
 // 1,3,3,5,8,10
 // 1,3,5
-arr5=[]
+arr5=[5,10,100,999]
 arr6=[1,2,2]
+
+console.log(mergeDedupeSorted(arr2,arr5));
+
+
 
 function cross (arr1,arr2) {
     newarr=[]
@@ -76,31 +80,25 @@ function mergeDedupeSorted (arr1,arr2){
     for (i=0 ; i< small.length; i++){
         if (small[i]==big[i]){
             if (merged[merged.length-1]!=small[i]){
-                console.log('added dupe');
                 merged.push(small[i])
             }
-            else console.log('already in');
         }
         
         
             
             else if (small[i]!=merged[merged.length-1]){
                 merged.push(small[i])
-                console.log("added small");
             }
             else if (big[i]!= merged[merged.length-1]){
                 merged.push(big[i])
-                console.log("added big");
             }
         }
-    
-    for (k=small.length;k<big.Length;k++){
+    for (var k=small.length;k<big.length;k++){
+        console.log(k);
         if (big[k]!=merged[merged.length-1]){
             merged.push(big[k])
-            console.log(k);
-            console.log('added ending big');
+            
         }
     }
     return merged
 }
-console.log(mergeDedupeSorted(arr1,arr6));
