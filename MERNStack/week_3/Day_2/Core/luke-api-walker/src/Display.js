@@ -6,18 +6,25 @@ import { Link } from "react-router-dom";
 const Display = () => {
     const [item, setItem] = useState("");
     const { category, id } = useParams();
+    const [planetid, setPlanetId] = useState(0)
     useEffect(() => {
         axios
             .get(`https://swapi.dev/api/${category}/${id}/`)
-            .then((response) => setItem(response.data));
+            .then((response) => setItem(response.data))
+            
+            
     }, [category,id]);
     console.log(item);
-    const Homeworld = (id) => {
-        const [planet, setPlanet] = useState("");
+
+    const Homeworld = (item) => {
+        const [planet, setPlanet] = useState("")
         useEffect(() => {
+            
             axios
-                .get(`https://swapi.dev/api/planets/${id}/`)
-                .then((response) => setPlanet(response.data));
+            .get(`${item.homeworld}`)
+            .then((response) => setPlanet(response.data))
+            .then (()=>setPlanetId(item.homeworld.match(/(\d+)/)[0]))
+            .catch("Loading")
         }, [id]);
         return planet.name;
     };
@@ -29,7 +36,7 @@ const Display = () => {
                     <h4>Character name: </h4> <p> {item.name} </p>
                     <h4>Character gender: </h4> <p> {item.gender} </p>
                     <h4>Character birth year: </h4> <p> {item.birth_year} </p>
-                    <h4>Character homeworld: </h4> <Link to={`/planets/${id}`} >  <p> {Homeworld(id)} </p></Link>
+                    <h4>Character homeworld: </h4> <Link to={`/planets/${planetid}`} >  <p>  {Homeworld(item)} </p></Link>
                     
                 </>
             );
