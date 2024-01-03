@@ -1,0 +1,470 @@
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.insertOne({name: "Achref Nejah", home_state: "Tunis", lucky_number: 12345678, birthday: {month: 2, day: 2, year: 2002}} )
+{
+  acknowledged: true,
+  insertedId: ObjectId("65956a236f36bab372c3c23f")
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.insertOne({ name: "Hichem Nejah", home_state: "Tunis", lucky_number: 12, birthday: { month: 7, day: 7, year:1957 } })
+{
+  acknowledged: true,
+  insertedId: ObjectId("65956a516f36bab372c3c240")
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.insertOne({ name: "Fatma Hamdi", home_state: "Tunis", lucky_number: 4, birthday: { month: 4, day: 4, year:1964 } })
+{
+  acknowledged: true,
+  insertedId: ObjectId("65956a7f6f36bab372c3c241")
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.insertOne({ name: "Najla Nejah", home_state: "Tunis", lucky_number: 9, birthday: { month: 9, day: 9, year:1999} })
+{
+  acknowledged: true,
+  insertedId: ObjectId("65956aa36f36bab372c3c242")
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.insertOne({ name: "Melek Nejah", home_state: "Tunis", lucky_number: 2, birthday: { month: 3, day: 3, year:2003} })
+{
+  acknowledged: true,
+  insertedId: ObjectId("65956ad76f36bab372c3c243")
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a236f36bab372c3c23f"),
+    name: 'Achref Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12345678,
+    birthday: { month: 2, day: 2, year: 2002 }
+  },
+  {
+    _id: ObjectId("65956a516f36bab372c3c240"),
+    name: 'Hichem Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12,
+    birthday: { month: 7, day: 7, year: 1957 }
+  },
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 }
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 }
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 }
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find( {lucky_number :{ $gt:3 }  })
+[
+  {
+    _id: ObjectId("65956a236f36bab372c3c23f"),
+    name: 'Achref Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12345678,
+    birthday: { month: 2, day: 2, year: 2002 }
+  },
+  {
+    _id: ObjectId("65956a516f36bab372c3c240"),
+    name: 'Hichem Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12,
+    birthday: { month: 7, day: 7, year: 1957 }
+  },
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 }
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 }
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.update( { $set: {interests : ["coding","brunch","MongoDB"] }  } )
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 1 (Collection.update)
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany( { $set: {interests : ["coding","brunch","MongoDB"] }  } )
+MongoInvalidArgumentError: Update document requires atomic operators
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {interests : ["coding","brunch","MongoDB"] }  } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a236f36bab372c3c23f"),
+    name: 'Achref Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12345678,
+    birthday: { month: 2, day: 2, year: 2002 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a516f36bab372c3c240"),
+    name: 'Hichem Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12,
+    birthday: { month: 7, day: 7, year: 1957 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateOne({_id:ObjectId("65956ad76f36bab372c3c243")}, { $set: {interests : ["coding","brunch","MongoDB"] }  } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a236f36bab372c3c23f"),
+    name: 'Achref Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12345678,
+    birthday: { month: 2, day: 2, year: 2002 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a516f36bab372c3c240"),
+    name: 'Hichem Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12,
+    birthday: { month: 7, day: 7, year: 1957 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateOne({_id:ObjectId("65956ad76f36bab372c3c243")}, { $set: {interests : ["coding","brunch","MongoDB","taxes"] }  } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a236f36bab372c3c23f"),
+    name: 'Achref Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12345678,
+    birthday: { month: 2, day: 2, year: 2002 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a516f36bab372c3c240"),
+    name: 'Hichem Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12,
+    birthday: { month: 7, day: 7, year: 1957 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'taxes' ]
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateOne({_id:ObjectId("65956ad76f36bab372c3c243")}, { $set: {interests : ["coding","brunch","MongoDB"] }  } )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.deleteOne({ _id: ObjectId("65956a236f36bab372c3c23f"), })
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a516f36bab372c3c240"),
+    name: 'Hichem Nejah',
+    home_state: 'Tunis',
+    lucky_number: 12,
+    birthday: { month: 7, day: 7, year: 1957 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.deleteOne({ lucky_number: {$gt:5}})
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {number_of_belts:0})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:54)
+
+> 1 | db.students.updateMany({}, { $set: {number_of_belts:0})
+    |                                                       ^
+  2 |
+
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {number_of_belts:0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 0
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $inc: {number_of_belts:1 }})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 1
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 1
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 1
+  }
+]
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $inc: {$currentDate: {createdAt: true}} })
+MongoServerError: Cannot increment with non-numeric argument: {$currentDate: { createdAt: true }}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {$currentDate: {createdAt: true}} })
+MongoServerError: The dollar ($) prefixed field '$currentDate' in '$currentDate' is not allowed in the context of an update's replacement document. Consider using an aggregation pipeline with $replaceWith.
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {$currentDate: {createdAt: true}} })
+MongoServerError: The dollar ($) prefixed field '$currentDate' in '$currentDate' is not allowed in the context of an update's replacement document. Consider using an aggregation pipeline with $replaceWith.
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {updated_on:0} })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {$currentDate: {createdAt: true}} })
+MongoServerError: The dollar ($) prefixed field '$currentDate' in '$currentDate' is not allowed in the context of an update's replacement document. Consider using an aggregation pipeline with $replaceWith.
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({}, { $set: {$currentDate: {updated_on: true}} })
+MongoServerError: The dollar ($) prefixed field '$currentDate' in '$currentDate' is not allowed in the context of an update's replacement document. Consider using an aggregation pipeline with $replaceWith.
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.updateMany({},  {$currentDate: {updated_on: true}} )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()*
+...
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()*
+...
+Atlas atlas-gz5uf1-shard-0 [primary] my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("65956a7f6f36bab372c3c241"),
+    name: 'Fatma Hamdi',
+    home_state: 'Tunis',
+    lucky_number: 4,
+    birthday: { month: 4, day: 4, year: 1964 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 1,
+    updated_on: ISODate("2024-01-03T13:36:02.688Z")
+  },
+  {
+    _id: ObjectId("65956aa36f36bab372c3c242"),
+    name: 'Najla Nejah',
+    home_state: 'Tunis',
+    lucky_number: 9,
+    birthday: { month: 9, day: 9, year: 1999 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 1,
+    updated_on: ISODate("2024-01-03T13:36:02.688Z")
+  },
+  {
+    _id: ObjectId("65956ad76f36bab372c3c243"),
+    name: 'Melek Nejah',
+    home_state: 'Tunis',
+    lucky_number: 2,
+    birthday: { month: 3, day: 3, year: 2003 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ],
+    number_of_belts: 1,
