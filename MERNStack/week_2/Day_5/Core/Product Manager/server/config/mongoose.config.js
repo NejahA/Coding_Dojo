@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const dbName = process.env.db;
+const dbName = "product-manager";
 const username = process.env.ATLAS_USERNAME;
 const pw = process.env.ATLAS_PASSWORD;
 
-//! Don't forget to change the String
+//! Don't forget to change the String 
 const uri = `mongodb+srv://${username}:${pw}@cluster0.qd9v5k1.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 mongoose
   .connect(uri)

@@ -21,18 +21,18 @@ function Form({product,setProduct}) {
         <h1>Product Manager</h1>
         
         <div><label htmlFor="">Title</label><input type="text" name='title' onChange={e =>handleInput(e)} 
-        placeholder={product.errors&& "Please insert a Title"}
+        placeholder={product.errors&& product.errors.title? "Please insert a Title":""}
         value={product.title}
         />
         </div>
         <div><label htmlFor="">Price</label><input type="number" name='price' onChange={e =>handleInput(e)} 
-        placeholder={product.errors && "The price set a valid price" }
+        placeholder={product.errors && product.errors.price? "The price set a price":"" }
         value={product.price}
         />
-        {product.price<0? <p style={{color:"red"}}>The price cannot be negative</p>:""}
+        {product.errors && product.errors.price  && product.errors.price.message==="negative"? <p style={{color:"red"}}>The price cannot be negative</p>:""}
         </div>
         <div><label htmlFor="">Description</label><input type="text" name='description' onChange={e =>handleInput(e)}
-        placeholder={product.errors && "Please  add a description"} value={product.description} />
+        placeholder={product.errors && product.errors.description  ? "Please  add a description":""} value={product.description} />
         
         </div>
         <button>Create</button>

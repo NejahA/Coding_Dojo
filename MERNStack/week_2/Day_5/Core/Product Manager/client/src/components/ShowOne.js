@@ -35,8 +35,9 @@ const ShowOne = () => {
     </div>
     <Link to = {"/product/edit/"+id}>
     <button>Edit</button>
-    <button onClick={DeleteOne}>Delete</button>
     </Link>
+    <button onClick={DeleteOne}>Delete</button>
+    <button onClick={()=>nav(-1)} >Home</button>
   </>
   )
 }
