@@ -28,9 +28,9 @@ const EditOne = () => {
      const handleSubmit=  (e) => {
        e.preventDefault();
        axios.patch("http://localhost:8000/api/products/edit/"+id, {title:oneEdit.title, description:oneEdit.description, price:oneEdit.price})
-           .then(res => console.log(res))
+           .then(res => {console.log(res);nav(-2)}
+           )
            .catch(err =>{setOneEdit({...oneEdit,errors: err.response.data.errors})})
-           nav(-2);
 
         }
   return (
@@ -40,10 +40,12 @@ const EditOne = () => {
         <div><label htmlFor="">Title</label><input type="text" name='title' onChange={e =>handleInput(e)} value={oneEdit.title} 
         placeholder={oneEdit.errors && "Please insert a Title" }
         />
+
         </div>
         <div><label htmlFor="">Price</label><input type="number" name='price' onChange={e =>handleInput(e)} value={oneEdit.price}
         placeholder={oneEdit.errors && "Please set a Price"}
         />
+        {oneEdit.price<0? <p style={{color:"red"}}>The price cannot be negative</p>:""}
         
         </div>
         <div><label htmlFor="">Description</label><input type="text" name='description' onChange={e =>handleInput(e)} value={oneEdit.description}
