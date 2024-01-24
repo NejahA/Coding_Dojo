@@ -26,7 +26,7 @@ function Form({product,setProduct}) {
         />
         </div>
         <div><label htmlFor="">Price</label><input type="number" name='price' onChange={e =>handleInput(e)} 
-        placeholder={product.errors && product.errors.price? "The price set a price":"" }
+        placeholder={product.errors && product.errors.price? "Please set a price":"" }
         value={product.price}
         />
         {product.errors && product.errors.price  && product.errors.price.message==="negative"? <p style={{color:"red"}}>The price cannot be negative</p>:""}
