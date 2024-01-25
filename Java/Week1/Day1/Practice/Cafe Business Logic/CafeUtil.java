@@ -40,6 +40,16 @@ public class CafeUtil {
         customers.add(username);
         
     }
-    
+    void printPriceChart(String product, double price, int maxQuantity){
+        System.out.println(product);
+        for (Integer i = 0; i< maxQuantity ;i++){
+            if ( i == 0 ) {
+            System.out.println(""+(i+1)+" - $"+price);
+            }
+            else {
+            System.out.println(""+(i+1)+" - $"+(price*(i+1)-(i+1)*0.5));
+            }
+        }
+    }
 }
 
