@@ -10,7 +10,7 @@ public class PuzzleTest {
 		System.out.println(randomLetter);
 		String randomPw = generator.generatePassword();
 		System.out.println(randomPw);
-		ArrayList<String> randomPwSet = generator.getNewPasswordSet(5);
+		ArrayList<String> randomPwSet = generator.getNewPasswordSet(10);
 		System.out.println(randomPwSet);
 		
 		ArrayList<String> shuffleSet = generator.shuffleArray(randomPwSet);
